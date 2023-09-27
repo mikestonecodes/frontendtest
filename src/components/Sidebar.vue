@@ -4,18 +4,16 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import type { PropType } from 'vue';
 import type { Square } from './Chessboard.vue';
 
-export default {
-  props: {
-    squares: {
-      type: Array as PropType<Square[]>,
-      required: true
-    }
+const props = defineProps({
+  squares: {
+    type: Array as PropType<Square[]>,
+    required: true
   }
-}
+});
 </script>
 
 <style scoped>

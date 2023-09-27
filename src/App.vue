@@ -5,29 +5,20 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
+import { ref } from 'vue';
 import Chessboard from './components/Chessboard.vue';
 import Sidebar from './components/Sidebar.vue';
 import type { Square } from './components/Chessboard.vue';
-export default {
-  components: {
-    Chessboard,
-    Sidebar
-  },
-  data(): { clickedSquares: Square[] } {
-    return {
-      clickedSquares: []
-    }
-  },
-  methods: {
-    handleSquareClicked(square: Square) {
-      this.clickedSquares.unshift(square);
-      if(this.clickedSquares.length > 19) {
-        this.clickedSquares.pop();
-      }
-    }
+
+const clickedSquares = ref<Square[]>([]);
+
+const handleSquareClicked = (square: Square) => {
+  clickedSquares.value.unshift(square);
+  if(clickedSquares.value.length > 19) {
+    clickedSquares.value.pop();
   }
-}
+};
 </script>
 
 <style scoped>
