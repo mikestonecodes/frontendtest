@@ -7,9 +7,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import Chessboard from './components/Chessboard.vue';
-import Sidebar from './components/Sidebar.vue';
-import type { Square } from './components/Chessboard.vue';
+import Chessboard from './components/chessboard/Chessboard.vue';
+import Sidebar from './components/sidebar/Sidebar.vue';
+import type { Square } from './components/chessboard/Chessboard.vue';
 
 const clickedSquares = ref<Square[]>([]);
 
